@@ -1,0 +1,54 @@
+- Dimensions -
+X: 2048
+Y: 858
+Scale: 100%
+Start Frame: 2467
+End Frame: 2473
+
+- Camera -
+Aperture Size: 0.01
+Focus Object: CAM-DOF
+
+- Volume Sampling -
+Step Size: 1.00
+Max Steps 1024
+
+- Sampling -
+Path Tracing: On
+Clamp Direct: 15.00
+Clamp Indirect: 3.00
+
+Render Samples: 600
+Pattern: Sobol
+
+- Transparency -
+Max: 8
+Min: 8
+
+- Bounces -
+Max: 2
+Min: 2
+
+Diffuse: 4
+Glossy: 4
+Transmission: 12
+Volume: 0
+
+Refractive Caustics: Off
+Reflective Caustics: Off
+
+Filter Glossy: 2.00
+
+- Render Performance - 
+
+Open Shading Language: Off
+Feature Set: Supported
+Device: CPU
+
+Tile X Size: 32
+Tile Y Size: 32
+
+Cache BVH: Off
+Persistant Images: Off
+Progressive Refine: Off
+Spatial Splits: Off
