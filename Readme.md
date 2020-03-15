@@ -1,3 +1,12 @@
+Build instructions:
+docker build -t shawn/blender_docker .
+
+Run instruction
+docker run -it shawn/blender_docker sh
+docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=0,1 --rm -it shawn/blender_docker sh
+
+docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=2,3 --rm -it shawn/blender_docker sh
+
 ./blender ../benchmark.blend --background --python ../blend.py
 
 Example command

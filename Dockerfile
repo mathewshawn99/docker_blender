@@ -13,9 +13,11 @@ RUN wget -q https://download.blender.org/release/Blender2.79/blender-2.79-linux-
 
 RUN tar -xvf blender-2.79-linux-glibc219-x86_64.tar.bz2
 
-
-
 RUN mv blender-2.79-linux-glibc219-x86_64 blender_install
+
+RUN rm blender-2.79-linux-glibc219-x86_64.tar.bz2
+
+RUN mkdir -p blender_install/logs
 
 VOLUME /media
 
