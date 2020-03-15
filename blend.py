@@ -10,6 +10,15 @@ import time
 import math
 import os
 
+import datetime
+
+x = datetime.datetime.now()
+LOG_FILE_NAME = x.strftime("%Y-%m-%d %H-%M-%S") + ".txt"
+LOG_FILE= open("logs/" + LOG_FILE_NAME,"w+")
+
+#start time
+LOG_FILE.write("Began at:" + str(datetime.datetime.now()))
+
 for card in bpy.context.user_preferences.addons['cycles'].preferences.devices:
     print(card.name)
 
@@ -19,10 +28,11 @@ prefs.devices[0].use = True
 
 bpy.ops.wm.save_userpref()
 
-
-
-
 print("Running")
 
 bpy.data.scenes['Scene'].render.filepath = os.path.join("test.png")
 bpy.ops.render.render()
+
+LOG_FILE.write("\Done rendering at:" + str(datetime.datetime.now()))
+  
+LOG_FILE.close()
