@@ -1,3 +1,5 @@
+The benchmark.blend file is tracked using git LFS
+
 Build Docker image:
 `docker build -t shawn/blender_docker .`
 

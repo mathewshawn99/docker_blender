@@ -12,15 +12,14 @@ import os
 
 import datetime
 
-for card in bpy.context.user_preferences.addons['cycles'].preferences.devices:
-    print(card.name)
-
 prefs = bpy.context.user_preferences.addons['cycles'].preferences
 prefs.compute_device_type = 'CUDA'
-prefs.devices[0].use = True
+
+for card in prefs.devices.keys():
+	if "Tesla" in card: #select Tesla cards
+		prefs.devices[card].use = True
 
 bpy.ops.wm.save_userpref()
-
 
 x = datetime.datetime.now()
 LOG_FILE_NAME = x.strftime("%Y-%m-%d %H-%M-%S") + ".txt"
