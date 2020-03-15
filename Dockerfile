@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM nvidia/cuda:10.0-devel-ubuntu18.04
 
 # copy all the files to the container
 COPY . .
@@ -13,5 +13,5 @@ RUN apt-get install libglu1-mesa libxi6 libgconf-2-4 -y
 
 RUN mv blender-2.79-linux-glibc219-x86_64 blender_install
 
-EXPOSE 8888
+ENTRYPOINT ["/usr/local/blender/blender", "-b"]
 
