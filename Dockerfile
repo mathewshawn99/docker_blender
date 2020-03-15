@@ -19,5 +19,3 @@ RUN mv blender-2.79-linux-glibc219-x86_64 blender_install
 
 VOLUME /media
 
-ENTRYPOINT ["blender_install", "-b"]
-
